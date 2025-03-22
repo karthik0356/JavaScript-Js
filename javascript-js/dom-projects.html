@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM projects</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+
+    <button onclick="
+     subscribe();
+     " class="js-subscribe-button">
+      Subscribe
+    </button>
+    
+    <p>amazon shipping calsi</p>
+    <input placeholder="cost of order" class="js-cost-input" onkeydown="console.log(event.key);
+    handleCostKeydown(event);
+    ">
+
+    <button onclick="
+    calculateTotal();
+
+
+
+    ">calculate</button>
+    <p class="js-total-cost"></p>
+    <script>
+
+        function handleCostKeydown(event) {
+            if(event.key === 'Enter'){
+                calculateTOtal();
+            }
+        }
+
+
+    
+        function calculateTotal(){
+            const input = document.querySelector('.js-cost-input');
+
+            let cost = Number(input.value);
+
+
+            if(cost < 40 ){
+                cost += 10;
+            }
+
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$ ${cost}`;
+        }
+
+
+
+
+
+
+
+        function subscribe(){
+            const buttonElement = document.querySelector('.js-subscribe-button');
+        
+            if(buttonElement.innerText === 'Subscribe'){
+               buttonElement.innerHTML = 'Subscribed';
+            }
+            else{
+               buttonElement.innerHTML = 'Subscribe';
+            }
+        }
+
+    </script>
+  </body>
+</html>
